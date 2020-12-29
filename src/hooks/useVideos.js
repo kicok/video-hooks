@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import youtube from '../apis/youtube';
 
 // 동영상 검색 관련 기능
-const useVideos = ({ defaultSearchTerm }) => {
+const useVideos = (defaultSearchTerm) => {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
