@@ -15,13 +15,8 @@ const App = () => {
       },
     });
 
-    console.log(response);
     setVideos(response.data.items);
     setSelectVideo(response.data.items[0]);
-  };
-
-  const onVideoSelect = (video) => {
-    setSelectVideo(video);
   };
 
   useEffect(() => {
@@ -37,7 +32,8 @@ const App = () => {
             <VideoDetail video={selectedVideo} />
           </div>
           <div className="five wide column">
-            <VideoList onVideoSelect={onVideoSelect} videos={videos} />
+            <VideoList onVideoSelect={setSelectVideo} videos={videos} />
+            {/* <VideoList onVideoSelect={(video) => setSelectVideo(video)} videos={videos} /> */}
           </div>
         </div>
       </div>
